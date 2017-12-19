@@ -1,0 +1,20 @@
+[
+  {
+    "outputFileName": "Content/Ui/Other.min.css",
+    "inputFiles": [
+      "Content/Ui/Other.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/jquery-1.10.2.min.js",
+    "inputFiles": [
+      "Scripts/jquery-1.10.2.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/kendo/kendo.material.min.css",
+    "inputFiles": [
+      "Content/kendo/kendo.material.css"
+    ]
+  }
+]
