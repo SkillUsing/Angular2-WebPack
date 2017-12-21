@@ -1,0 +1,24 @@
+<div class="root" style="height:490px">
+    <div class="title">
+        <h1>{{title}}</h1>
+        <div class="legend-wrapper">
+            <ul *ngIf="!isRadar">
+                <ng-template ngFor let-legend [ngForOf]='legendArr' let-i='index'>
+                    <li [style.background]="legend.selected ? legend.color: 'transparent'" [style.border]="legend.selected?'1px solid '+ legend.color : '1px solid #9C8C84'"
+                        (click)="legendToggle(legend)">
+                        {{legend.name}}
+                    </li>
+                </ng-template>
+            </ul>
+            <ul *ngIf="isRadar">
+                <ng-template ngFor let-legend [ngForOf]='legendArr.data' let-i='index'>
+                    <li [style.background]="legend.selected ? legend.color: 'transparent'" [style.border]="legend.selected?'1px solid '+ legend.color : '1px solid #9C8C84'"
+                        (click)="legendToggle(legend)">
+                        {{legend.name}}
+                    </li>
+                </ng-template>
+            </ul>
+        </div>
+    </div>
+    <echarts-ng2 class="main" #echarts></echarts-ng2>
+</div>

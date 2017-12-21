@@ -1,0 +1,122 @@
+.dashboard
+{
+    position: relative;
+    width :100% !important;
+    height :100% !important;
+    margin:0;
+    padding:0;
+    padding-top: 5%;
+    background :url('../assets/bg.jpg');
+    background-size: 100% 100%;
+}
+
+
+.flex-container.column {
+    position: relative;
+    height: 100% !important;
+    width: 100% !important;
+    overflow: hidden;
+    margin: 0 auto;
+    box-sizing: content-box;
+}
+
+.item {
+    padding: 0;
+    margin: 0;
+    width: 75%;
+    height: 49%;
+    position: absolute;
+    text-align: center;
+    transition: all 0.8s;
+    background: #202023;
+    background: rgba(32,32,35,0.7);
+}
+
+.active {
+    height: 50%;
+    width: 75%;
+    margin-left: 10px;
+    line-height: 300px;
+}
+
+.title{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+    background-color: rgba(32, 32, 35, 0.2);
+    color: white;
+    width: 100%;
+}
+h1{
+    display: block;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-box-flex: 0;
+    font-size: 21px;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.content{
+  width:100%;
+}
+
+.content table{
+    color:aliceblue;
+    margin:0 auto;
+}
+
+.content table tr td{
+    position: relative;
+    width:100px;
+    height:40px;
+    line-height: 40px;
+}
+
+
+
+.content table tr td i{
+    position: absolute;
+    background: #9bca63;
+    display: inline-block;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 20px;
+    border-radius: 7px;
+    z-index:99;
+}
+
+.content table tr td  span{
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+    top:10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #6479a0;
+    border-radius: 7px;
+    z-index:1;
+}
+
+.content table tr td .addressText{
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index:100;
+}
+
+thead tr td.address{
+    width:200px;
+}
