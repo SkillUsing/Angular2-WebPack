@@ -52,20 +52,20 @@
         <div class="item active" (click)="clickChart('4')" style="transform: translate(33.7%, 0) scale(1)">
           <radar></radar>
         </div> -->
-        <div class="item" (click)="clickChart('1',true)" style="transform: translate(-34.4%,70%) scale(0.29)">
-          <multipleColumn></multipleColumn>
+        <div class="item" (click)="clickChart('1',true)"  style="transform: translate(-34.4%,70%) scale(0.29)">
+          <multipleColumn (mouseout)="testMouseout()"  (mouseover)="testMouseOver()"></multipleColumn>
         </div>
         <div class="item" (click)="clickChart('2',true)" style="transform: translate(1%,70%) scale(0.29)">
-          <line></line>
+          <line (mouseout)="testMouseout()"  (mouseover)="testMouseOver()"></line>
         </div>
         <div class="item" (click)="clickChart('3',true)" style="transform: translate(36%,70%) scale(0.29)">
-          <pie></pie>
+          <pie (mouseout)="testMouseout()"  (mouseover)="testMouseOver()"></pie>
         </div>
         <div class="item" (click)="clickChart('4',true)" style="transform: translate(70%,70%) scale(0.29)">
-          <pie></pie>
+          <pie (mouseout)="testMouseout()"  (mouseover)="testMouseOver()"></pie>
         </div>
         <div class="item active" (click)="clickChart('5',true)" style="transform: translate(0, 0) scale(1)">
-          <radar></radar>
+          <radar (mouseout)="testMouseout()"  (mouseover)="testMouseOver()"></radar>
         </div>
       </div>
     </div>

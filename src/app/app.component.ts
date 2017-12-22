@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
       this.items[i].dataset.order = i + 1;
     }
     this.TaskTop10();
-    this.startInterval();
+    //this.startInterval();
   }
 
   //10秒一次循环切换,并且获取数据
@@ -51,6 +51,15 @@ export class AppComponent implements OnInit {
 
   stopInterval() {
     clearInterval(this.interval);
+  }
+  //鼠标划出
+  testMouseout() {
+    this.startInterval();
+  }
+
+  //鼠标划入
+  testMouseOver(){
+    this.stopInterval();
   }
 
   clickChart(index: number, isTrue: boolean = false) {
