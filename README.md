@@ -9,6 +9,6 @@
  
 ## 下载
 
- > git  clone  
- > npm i
- > npm start
+ > git  clone          
+ > npm i       
+ > npm start       
