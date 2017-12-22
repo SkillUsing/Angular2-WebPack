@@ -1,18 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { EChartOption } from 'echarts-ng2';
+import { BaseChart } from '../baseComponents/baseChart.component';
 
 @Component({
   selector: 'line',
   template: `<echart  [title]="title" [options]='options'></echart>`,
 })
-export class LineComponent {
+export class LineComponent extends BaseChart {
   public options: EChartOption;
 
-  public title:string;
+  public title: string;
 
   constructor() {
-    this.title="图表2";
-
+    super();
+    this.title = "图表2";
     this.options = {
       title: {
         show: false

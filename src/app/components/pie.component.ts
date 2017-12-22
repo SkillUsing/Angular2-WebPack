@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BaseChart } from '../baseComponents/baseChart.component';
 
 
 @Component({
@@ -6,13 +7,14 @@ import { Component } from '@angular/core';
     template: `<echart [title]='title' [options]='options'></echart>`
 })
 
-export class PieComponent {
+export class PieComponent extends BaseChart {
 
     public options: any;
 
-    public title:string;
+    public title: string;
     constructor() {
-        this.title="世界和平";
+        super();
+        this.title = "世界和平";
         this.options = {
             tooltip: {
                 trigger: 'item',

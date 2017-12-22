@@ -2,6 +2,7 @@ import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { ECharts, EChartOption } from 'echarts-ng2';
 
 
+
 @Component({
     selector: 'echart',
     templateUrl: "./echart.component.html",
@@ -9,7 +10,7 @@ import { ECharts, EChartOption } from 'echarts-ng2';
 })
 
 export class EchartComponent implements AfterViewInit {
-
+    private static EchartList: Array<EchartComponent> = [];
     @ViewChild('echarts') public echarts: ECharts;
 
     @Input() public options: EChartOption
@@ -23,15 +24,22 @@ export class EchartComponent implements AfterViewInit {
     private styleArr: string[] = [];
 
     constructor() {
-
+        EchartComponent.EchartList.push(this);
     }
 
-    changeSize() {
-        this.echarts.resize();
+    public changeSize() {
+        EchartComponent.EchartList.forEach((item, index) => {
+            let time = 500;
+            if (index > 2) {
+                time = (500 - 300) * index
+            }
+            setTimeout(() => {
+                item.echarts.resize();
+            }, time);
+        });
     }
 
     ngAfterViewInit() {
-
         this.echarts.setOption(this.options);
         this.legendArr = this.echarts.getOption()["series"];
         if (this.legendArr[0]['type'] == 'radar' || this.legendArr[0]['type'] == 'pie') {
@@ -52,8 +60,6 @@ export class EchartComponent implements AfterViewInit {
         }
 
         this.styleArr = this.legendArr['color'];
-
-        console.log(this.legendArr);
 
         window.addEventListener('resize', this.changeSize.bind(this));
     }

@@ -17,24 +17,52 @@
     width: 100% !important;
     overflow: hidden;
     margin: 0 auto;
+    padding:0;
     box-sizing: content-box;
 }
 
 .item {
+    position: absolute;
     padding: 0;
     margin: 0;
     width: 75%;
     height: 49%;
-    position: absolute;
+    overflow: hidden;
     text-align: center;
     transition: all 0.8s;
     background: #202023;
-    background: rgba(32,32,35,0.7);
+    background: rgba(32,32,35,0.5);
 }
+
+
+.t-item{
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 30%;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.8s;
+    background: #202023;
+    background: rgba(32,32,35,0.5);
+    border:1px solid goldenrod;
+}
+
+.b-item{
+    height:36%;
+}
+
+/* .active {
+    height: 50%;
+    width: 75%;
+    margin-left: 10px;
+    line-height: 300px;
+} */
 
 .active {
     height: 50%;
-    width: 75%;
+    width: 100%;
     margin-left: 10px;
     line-height: 300px;
 }

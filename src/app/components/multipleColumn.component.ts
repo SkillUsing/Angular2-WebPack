@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 import { EChartOption } from 'echarts-ng2';
+import { BaseChart } from '../baseComponents/baseChart.component';
 
 @Component({
   selector: 'multipleColumn',
   template: `<echart [title]="title" [options]='options'></echart>`,
 })
-export class MultipleColumnComponent {
+export class MultipleColumnComponent extends BaseChart {
   public options: EChartOption;
 
   public title:string;
 
   constructor() {
+    super();
     this.title="图表3";
     this.options = {
       title: {

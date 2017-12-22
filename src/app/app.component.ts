@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { EChartOption, ECharts } from 'echarts-ng2';
+import { LineComponent } from './components/line.component';
 
 @Component({
   selector: 'app-root',
@@ -14,33 +15,48 @@ export class AppComponent implements OnInit {
 
   private showChartIndex: number;
 
-  public colors = ['#325B69', '#698570', '#AE5548', '#6D9EA8', '#9CC2B0', '#C98769'];
+  private colors = ['#325B69', '#698570', '#AE5548', '#6D9EA8', '#9CC2B0', '#C98769'];
 
-  public testWidth = '20%';
+  private testWidth = '20%';
 
-  public top10: Array<any> = [];
+  private top10: Array<any> = [];
+
+  @ViewChild(LineComponent)
+  private line: LineComponent;
+
+  private interval: any;
 
   ngOnInit() {
-    this.charts = [1, 2, 3, 4];
+    this.charts = [1, 2, 3, 4, 5];
     this.showChartIndex = this.charts[this.i];
     this.items = document.querySelectorAll('.flex-container .item');
     for (let i = 0; i < this.items.length; i++) {
       this.items[i].dataset.order = i + 1;
     }
     this.TaskTop10();
-    //10秒一次循环切换,并且获取数据
-    // window.setInterval(() => {
-    //   if (this.i >= 4) {
-    //     this.i = 0;
-    //   }
-    //   this.clickChart(this.charts[this.i]);
-    //   this.i++;
-    //   return true;
-    // }, 10000);
+    this.startInterval();
   }
 
-  clickChart(index: number) {
-    this.i = index;
+  //10秒一次循环切换,并且获取数据
+  startInterval() {
+    this.interval = setInterval(() => {
+      if (this.i >= this.charts.length) {
+        this.i = 0;
+      }
+      this.clickChart(this.charts[this.i]);
+      this.i++;
+      return true;
+    }, 2000);
+  }
+
+  stopInterval() {
+    clearInterval(this.interval);
+  }
+
+  clickChart(index: number, isTrue: boolean = false) {
+    if (isTrue) {
+      this.i = index;
+    }
     let activeItem = document.querySelector('.flex-container .active');
     let activeIndex = activeItem['dataset']['order'];
     let clickItem = this.items[index - 1];
@@ -50,6 +66,10 @@ export class AppComponent implements OnInit {
     activeItem.classList.remove('active');
     clickItem.classList.add('active');
     this._setStyle(clickItem, activeItem);
+    this.line.changeSize();
+    //重置定时器,为了防止,用户手点之后立即切换图表
+    this.stopInterval();
+    this.startInterval();
   }
 
   _setStyle(el1, el2) {

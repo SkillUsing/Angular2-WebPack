@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EChartOption } from 'echarts-ng2';
+import { BaseChart } from '../baseComponents/baseChart.component';
 
 
 @Component({
@@ -9,12 +10,13 @@ import { EChartOption } from 'echarts-ng2';
     `
 })
 
-export class RadarComponent{
+export class RadarComponent extends BaseChart{
 
     public title:string;
     public options: EChartOption
 
     constructor() {
+        super();
         this.title="图表1"
         this.options = {
             title: {

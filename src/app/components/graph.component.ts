@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { BaseChart } from '../baseComponents/baseChart.component';
 
 @Component({
     selector: 'graph',
     template: `<echart [options]="options" [title]="title"></echart>`
 })
-export class GraphComponent {
+export class GraphComponent extends BaseChart {
 
     public options: any;
 
@@ -31,6 +32,7 @@ export class GraphComponent {
     
 
     constructor() {
+        super();
         this.nodeInit();
         this.linkInit();
         this.title = "科室关联";

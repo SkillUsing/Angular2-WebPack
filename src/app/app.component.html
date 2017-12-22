@@ -1,22 +1,75 @@
 <div class="mainApp">
   <div class="row dashboard">
-    <div class="col-md-8" style="height:100%;border:1px solid red">
+    <div class="col-md-3" style="height:100%;border:1px solid red;padding:0;">
       <div class="flex-container column">
-        <div class="item one" (click)="clickChart('1')" style="transform: translate(-32.4%,-33.5%) scale(0.33)">
+        <div class="t-item">
+          <div class="title">
+            <h1>人员任务量Top5</h1>
+          </div>
+          <div class="content">
+            <table>
+              <thead>
+                <tr>
+                  <td></td>
+                  <td class="address">起点-终点</td>
+                  <td>任务总量</td>
+                  <td>完成数量</td>
+                </tr>
+              </thead>
+              <tr *ngFor="let item of top10">
+                <td>{{item.Id}}</td>
+                <td>
+                  <div class="addressText">{{item.Text}}</div>
+                  <span>
+                    <i [style.width]="item.Progress"></i>
+                  </span>
+                </td>
+                <td>{{item.Count}}</td>
+                <td>{{item.OverCount}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="t-item" style="transform: translate(0,105%)">
+
+        </div>
+        <div class="t-item b-item" style="transform: translate(0,180%)">
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6" style="height:100%;border:1px solid red;">
+      <div class="flex-container column">
+        <!-- <div class="item" (click)="clickChart('1')" style="transform: translate(-32.4%,-33.5%) scale(0.33)">
           <multipleColumn></multipleColumn>
         </div>
-        <div class="item two" (click)="clickChart('2')" style="transform: translate(-32.4%,0.5%) scale(0.33)">
+        <div class="item" (click)="clickChart('2')" style="transform: translate(-32.4%,0.5%) scale(0.33)">
           <line></line>
         </div>
-        <div class="item three" (click)="clickChart('3')" style="transform: translate(-32.4%,34.5%) scale(0.33)">
+        <div class="item" (click)="clickChart('3')" style="transform: translate(-32.4%,34.5%) scale(0.33)">
           <pie></pie>
         </div>
-        <div class="item four active" (click)="clickChart('4')" style="transform: translate(33.7%, 0) scale(1)">
+        <div class="item active" (click)="clickChart('4')" style="transform: translate(33.7%, 0) scale(1)">
+          <radar></radar>
+        </div> -->
+        <div class="item" (click)="clickChart('1',true)" style="transform: translate(-34.4%,70%) scale(0.29)">
+          <multipleColumn></multipleColumn>
+        </div>
+        <div class="item" (click)="clickChart('2',true)" style="transform: translate(1%,70%) scale(0.29)">
+          <line></line>
+        </div>
+        <div class="item" (click)="clickChart('3',true)" style="transform: translate(36%,70%) scale(0.29)">
+          <pie></pie>
+        </div>
+        <div class="item" (click)="clickChart('4',true)" style="transform: translate(70%,70%) scale(0.29)">
+          <pie></pie>
+        </div>
+        <div class="item active" (click)="clickChart('5',true)" style="transform: translate(0, 0) scale(1)">
           <radar></radar>
         </div>
       </div>
     </div>
-    <div class="col-md-4" style="height:100%;border:1px solid red;padding:0;">
+    <div class="col-md-3" style="height:100%;border:1px solid red;padding:0;">
       <div class="item" style="transform: translate(-30,0);width:100%;height:100%;overflow: hidden;">
         <graph style="height:50%"></graph>
         <div style="height:50%;border:1px solid green;">
@@ -24,27 +77,27 @@
             <h1>科室任务Top10</h1>
           </div>
           <div class="content">
-              <table>
-                  <thead>
-                    <tr>
-                      <td></td>
-                      <td class="address">起点-终点</td>
-                      <td>任务总量</td>
-                      <td>完成数量</td>
-                    </tr>
-                  </thead>
-                  <tr *ngFor="let item of top10">
-                    <td>{{item.Id}}</td>
-                    <td>
-                      <div class="addressText">{{item.Text}}</div>
-                      <span>
-                          <i [style.width]="item.Progress"></i>
-                      </span>
-                    </td>
-                    <td>{{item.Count}}</td>
-                    <td>{{item.OverCount}}</td>
-                  </tr>
-                </table>
+            <table>
+              <thead>
+                <tr>
+                  <td></td>
+                  <td class="address">起点-终点</td>
+                  <td>任务总量</td>
+                  <td>完成数量</td>
+                </tr>
+              </thead>
+              <tr *ngFor="let item of top10">
+                <td>{{item.Id}}</td>
+                <td>
+                  <div class="addressText">{{item.Text}}</div>
+                  <span>
+                    <i [style.width]="item.Progress"></i>
+                  </span>
+                </td>
+                <td>{{item.Count}}</td>
+                <td>{{item.OverCount}}</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
