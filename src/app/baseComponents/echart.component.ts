@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { ECharts, EChartOption } from 'echarts-ng2';
+import { setInterval } from 'timers';
 
 
 
@@ -26,6 +27,8 @@ export class EchartComponent implements AfterViewInit {
 
     @ViewChild('root') root: ElementRef;
 
+    private rootWidth: number;
+
     constructor(private el: ElementRef) {
         //EchartComponent.EchartList.push(this);
     }
@@ -40,7 +43,15 @@ export class EchartComponent implements AfterViewInit {
         //         item.echarts.resize({height:`${this.root.nativeElement.clientHeight-50}px`});
         //     }, time);
         // });
-        this.echarts.resize({ height: `${this.root.nativeElement.clientHeight - 20}px` });
+        let width = this.root.nativeElement.clientHeight;
+        if (width == this.rootWidth) {
+            return false;
+        }
+        else {
+            this.rootWidth = width;
+            this.echarts.resize({ height: `${this.rootWidth - 20}px` });
+            return true;
+        }
     }
 
     ngAfterViewInit() {
@@ -67,7 +78,9 @@ export class EchartComponent implements AfterViewInit {
 
         window.addEventListener('resize', this.changeSize.bind(this));
         this.changeSize();
+        setInterval(() => this.changeSize(), 500);
         //this.echarts.resize({height:`${this.root.nativeElement.clientHeight-20}px`});
+
     }
 
 
