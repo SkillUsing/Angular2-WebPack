@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { BaseChart } from '../baseComponents/baseChart.component';
 
 @Component({
-    selector: 'graph',
-    template: `<echart [options]="options" [title]="title"></echart>`
+    selector: '[graph]',
+    template: `<div echart [options]="options" [title]="title" style="height:100%"></div>`
 })
 export class GraphComponent extends BaseChart {
 

@@ -15,10 +15,6 @@ export class AppComponent implements OnInit {
 
   private showChartIndex: number;
 
-  private colors = ['#325B69', '#698570', '#AE5548', '#6D9EA8', '#9CC2B0', '#C98769'];
-
-  private testWidth = '20%';
-
   private top10: Array<any> = [];
 
   @ViewChild(LineComponent)
@@ -39,26 +35,28 @@ export class AppComponent implements OnInit {
 
   //10秒一次循环切换,并且获取数据
   startInterval() {
-    this.interval = setInterval(() => {
-      if (this.i >= this.charts.length) {
-        this.i = 0;
-      }
-      this.clickChart(this.charts[this.i]);
-      this.i++;
-      return true;
-    }, 2000);
+    // this.interval = setInterval(() => {
+    //   if (this.i >= this.charts.length) {
+    //     this.i = 0;
+    //   }
+    //   this.clickChart(this.charts[this.i]);
+    //   this.i++;
+    //   return true;
+    // }, 5000);
   }
 
   stopInterval() {
-    clearInterval(this.interval);
+    //clearInterval(this.interval);
   }
   //鼠标划出
   testMouseout() {
+    console.log("out");
     this.startInterval();
   }
 
   //鼠标划入
   testMouseOver(){
+    console.log("over");
     this.stopInterval();
   }
 

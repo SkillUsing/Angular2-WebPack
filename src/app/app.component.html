@@ -34,7 +34,7 @@
 
         </div>
         <div class="t-item b-item" style="transform: translate(0,180%)">
-
+          <div style="height:100%"></div>
         </div>
       </div>
     </div>
@@ -52,26 +52,29 @@
         <div class="item active" (click)="clickChart('4')" style="transform: translate(33.7%, 0) scale(1)">
           <radar></radar>
         </div> -->
-        <div class="item" (click)="clickChart('1',true)"  style="transform: translate(-34.4%,70%) scale(0.29)">
-          <multipleColumn (mouseout)="testMouseout()"  (mouseover)="testMouseOver()"></multipleColumn>
+        <div class="item" (click)="clickChart('1',true)" style="transform: translate(-34.4%,70%) scale(0.29)">
+          <multipleColumn (mouseout)="testMouseout()" (mouseover)="testMouseOver()"></multipleColumn>
         </div>
         <div class="item" (click)="clickChart('2',true)" style="transform: translate(1%,70%) scale(0.29)">
-          <line (mouseout)="testMouseout()"  (mouseover)="testMouseOver()"></line>
+          <line (mouseout)="testMouseout()" (mouseover)="testMouseOver()"></line>
         </div>
         <div class="item" (click)="clickChart('3',true)" style="transform: translate(36%,70%) scale(0.29)">
-          <pie (mouseout)="testMouseout()"  (mouseover)="testMouseOver()"></pie>
+          <pie (mouseout)="testMouseout()" (mouseover)="testMouseOver()"></pie>
         </div>
         <div class="item" (click)="clickChart('4',true)" style="transform: translate(70%,70%) scale(0.29)">
-          <pie (mouseout)="testMouseout()"  (mouseover)="testMouseOver()"></pie>
+          <pie (mouseout)="testMouseout()" (mouseover)="testMouseOver()"></pie>
         </div>
         <div class="item active" (click)="clickChart('5',true)" style="transform: translate(0, 0) scale(1)">
-          <radar (mouseout)="testMouseout()"  (mouseover)="testMouseOver()"></radar>
+          <radar (mouseout)="testMouseout()" (mouseover)="testMouseOver()"></radar>
+        </div>
+        <div class="t-item c-item">
+          <div bar style="height:100%"></div>
         </div>
       </div>
     </div>
     <div class="col-md-3" style="height:100%;border:1px solid red;padding:0;">
       <div class="item" style="transform: translate(-30,0);width:100%;height:100%;overflow: hidden;">
-        <graph style="height:50%"></graph>
+        <div graph style="height:50%"></div>
         <div style="height:50%;border:1px solid green;">
           <div class="title">
             <h1>科室任务Top10</h1>

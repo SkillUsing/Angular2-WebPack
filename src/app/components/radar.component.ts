@@ -5,9 +5,7 @@ import { BaseChart } from '../baseComponents/baseChart.component';
 
 @Component({
     selector: 'radar',
-    template: `
-        <echart [title]='title' [options]='options'></echart>
-    `
+    template: `<div echart [options]="options" [title]="title" style="height:100%"></div>`
 })
 
 export class RadarComponent extends BaseChart{

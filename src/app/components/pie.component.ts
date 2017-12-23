@@ -4,7 +4,7 @@ import { BaseChart } from '../baseComponents/baseChart.component';
 
 @Component({
     selector: 'pie',
-    template: `<echart [title]='title' [options]='options'></echart>`
+    template: `<div echart [options]="options" [title]="title" style="height:100%"></div>`
 })
 
 export class PieComponent extends BaseChart {

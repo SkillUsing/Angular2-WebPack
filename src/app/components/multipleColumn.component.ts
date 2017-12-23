@@ -4,7 +4,7 @@ import { BaseChart } from '../baseComponents/baseChart.component';
 
 @Component({
   selector: 'multipleColumn',
-  template: `<echart [title]="title" [options]='options'></echart>`,
+  template: `<div echart [options]="options" [title]="title" style="height:100%"></div>`
 })
 export class MultipleColumnComponent extends BaseChart {
   public options: EChartOption;

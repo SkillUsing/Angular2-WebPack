@@ -53,6 +53,10 @@
     height:36%;
 }
 
+.c-item{
+    transform: translate(0, 230%) scale(1);
+}
+
 /* .active {
     height: 50%;
     width: 75%;
@@ -148,3 +152,5 @@ h1{
 thead tr td.address{
     width:200px;
 }
+
+

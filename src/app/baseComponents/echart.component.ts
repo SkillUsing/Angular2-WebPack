@@ -1,12 +1,13 @@
-import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { ECharts, EChartOption } from 'echarts-ng2';
 
 
 
 @Component({
-    selector: 'echart',
+    selector: '[echart]',
     templateUrl: "./echart.component.html",
-    styleUrls: ['./echart.component.css']
+    styleUrls: ['./echart.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class EchartComponent implements AfterViewInit {
@@ -23,20 +24,23 @@ export class EchartComponent implements AfterViewInit {
 
     private styleArr: string[] = [];
 
-    constructor() {
-        EchartComponent.EchartList.push(this);
+    @ViewChild('root') root: ElementRef;
+
+    constructor(private el: ElementRef) {
+        //EchartComponent.EchartList.push(this);
     }
 
     public changeSize() {
-        EchartComponent.EchartList.forEach((item, index) => {
-            let time = 500;
-            if (index > 2) {
-                time = (500 - 300) * index
-            }
-            setTimeout(() => {
-                item.echarts.resize();
-            }, time);
-        });
+        // EchartComponent.EchartList.forEach((item, index) => {
+        //     let time = 500;
+        //     if (index > 2) {
+        //         time = (500 - 300) * index
+        //     }
+        //     setTimeout(() => {
+        //         item.echarts.resize({height:`${this.root.nativeElement.clientHeight-50}px`});
+        //     }, time);
+        // });
+        this.echarts.resize({ height: `${this.root.nativeElement.clientHeight - 20}px` });
     }
 
     ngAfterViewInit() {
@@ -62,6 +66,8 @@ export class EchartComponent implements AfterViewInit {
         this.styleArr = this.legendArr['color'];
 
         window.addEventListener('resize', this.changeSize.bind(this));
+        this.changeSize();
+        //this.echarts.resize({height:`${this.root.nativeElement.clientHeight-20}px`});
     }
 
 
