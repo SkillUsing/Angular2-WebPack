@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
   private showChartIndex: number;
 
-  private top10: Array<any> = [];
+  public top10: Array<any> = [];
 
   @ViewChild(LineComponent)
   private line: LineComponent;
@@ -30,33 +30,31 @@ export class AppComponent implements OnInit {
       this.items[i].dataset.order = i + 1;
     }
     this.TaskTop10();
-    //this.startInterval();
+    this.startInterval();
   }
 
   //10秒一次循环切换,并且获取数据
   startInterval() {
-    // this.interval = setInterval(() => {
-    //   if (this.i >= this.charts.length) {
-    //     this.i = 0;
-    //   }
-    //   this.clickChart(this.charts[this.i]);
-    //   this.i++;
-    //   return true;
-    // }, 5000);
+    this.interval = setInterval(() => {
+      if (this.i >= this.charts.length) {
+        this.i = 0;
+      }
+      this.clickChart(this.charts[this.i]);
+      this.i++;
+      return true;
+    }, 5000);
   }
 
   stopInterval() {
-    //clearInterval(this.interval);
+    clearInterval(this.interval);
   }
   //鼠标划出
   testMouseout() {
-    console.log("out");
     this.startInterval();
   }
 
   //鼠标划入
-  testMouseOver(){
-    console.log("over");
+  testMouseOver() {
     this.stopInterval();
   }
 

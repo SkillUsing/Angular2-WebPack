@@ -1,6 +1,5 @@
 import { Component, ElementRef, Input, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { ECharts, EChartOption } from 'echarts-ng2';
-import { setInterval } from 'timers';
 
 
 
@@ -21,7 +20,7 @@ export class EchartComponent implements AfterViewInit {
 
     private legendArr: any;
 
-    private isRadar = false;
+    public isRadar = false;
 
     private styleArr: string[] = [];
 

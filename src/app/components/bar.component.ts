@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 
 export class BarComponent {
-    private options: any;
-    private title: string;
+    public options: any;
+    public title: string;
 
     constructor() {
         this.title = "月任务质量";

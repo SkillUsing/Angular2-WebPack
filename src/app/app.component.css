@@ -11,6 +11,14 @@
 }
 
 
+.doorplate{
+    position: fixed;
+    z-index:999;
+    left:45%;
+    top:2%;
+}
+
+
 .flex-container.column {
     position: relative;
     height: 100% !important;
@@ -46,7 +54,6 @@
     transition: all 0.8s;
     background: #202023;
     background: rgba(32,32,35,0.5);
-    border:1px solid goldenrod;
 }
 
 .b-item{

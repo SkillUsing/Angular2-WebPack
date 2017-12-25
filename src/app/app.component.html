@@ -1,6 +1,11 @@
 <div class="mainApp">
+  <div class="doorplate">
+    <div class="title">
+      <h1>北京华夏盛想科技有限公司</h1>
+    </div>
+  </div>
   <div class="row dashboard">
-    <div class="col-md-3" style="height:100%;border:1px solid red;padding:0;">
+    <div class="col-md-3" style="height:100%;padding:0;">
       <div class="flex-container column">
         <div class="t-item">
           <div class="title">
@@ -31,14 +36,14 @@
           </div>
         </div>
         <div class="t-item" style="transform: translate(0,105%)">
-
+          <pies style="height:100%"></pies>
         </div>
         <div class="t-item b-item" style="transform: translate(0,180%)">
-          <div style="height:100%"></div>
+          <pie style="height:100%"></pie>
         </div>
       </div>
     </div>
-    <div class="col-md-6" style="height:100%;border:1px solid red;">
+    <div class="col-md-6" style="height:100%;">
       <div class="flex-container column">
         <!-- <div class="item" (click)="clickChart('1')" style="transform: translate(-32.4%,-33.5%) scale(0.33)">
           <multipleColumn></multipleColumn>
@@ -52,19 +57,19 @@
         <div class="item active" (click)="clickChart('4')" style="transform: translate(33.7%, 0) scale(1)">
           <radar></radar>
         </div> -->
-        <div class="item" (click)="clickChart('1',true)" style="transform: translate(-34.4%,70%) scale(0.29)">
+        <div class="item" (click)="clickChart(1,true)" style="transform: translate(-34.4%,70%) scale(0.29)">
           <multipleColumn (mouseout)="testMouseout()" (mouseover)="testMouseOver()"></multipleColumn>
         </div>
-        <div class="item" (click)="clickChart('2',true)" style="transform: translate(1%,70%) scale(0.29)">
+        <div class="item" (click)="clickChart(2,true)" style="transform: translate(1%,70%) scale(0.29)">
           <line (mouseout)="testMouseout()" (mouseover)="testMouseOver()"></line>
         </div>
-        <div class="item" (click)="clickChart('3',true)" style="transform: translate(36%,70%) scale(0.29)">
+        <div class="item" (click)="clickChart(3,true)" style="transform: translate(36%,70%) scale(0.29)">
           <pie (mouseout)="testMouseout()" (mouseover)="testMouseOver()"></pie>
         </div>
-        <div class="item" (click)="clickChart('4',true)" style="transform: translate(70%,70%) scale(0.29)">
-          <pie (mouseout)="testMouseout()" (mouseover)="testMouseOver()"></pie>
+        <div class="item" (click)="clickChart(4,true)" style="transform: translate(70%,70%) scale(0.29)">
+          <barnegative (mouseout)="testMouseout()" (mouseover)="testMouseOver()"></barnegative>
         </div>
-        <div class="item active" (click)="clickChart('5',true)" style="transform: translate(0, 0) scale(1)">
+        <div class="item active" (click)="clickChart(5,true)" style="transform: translate(0, 0) scale(1)">
           <radar (mouseout)="testMouseout()" (mouseover)="testMouseOver()"></radar>
         </div>
         <div class="t-item c-item">
@@ -72,10 +77,10 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3" style="height:100%;border:1px solid red;padding:0;">
+    <div class="col-md-3" style="height:100%;padding:0;">
       <div class="item" style="transform: translate(-30,0);width:100%;height:100%;overflow: hidden;">
         <div graph style="height:50%"></div>
-        <div style="height:50%;border:1px solid green;">
+        <div style="height:50%;">
           <div class="title">
             <h1>科室任务Top10</h1>
           </div>

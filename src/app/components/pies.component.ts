@@ -1,38 +1,41 @@
 import { Component } from '@angular/core';
 import { BaseChart } from '../baseComponents/baseChart.component';
 
-
 @Component({
-    selector: 'pie',
-    template: `<div echart [options]="options" [title]="title" style="height:100%"></div>`
+    selector: 'pies',
+    template: '<div echart [options]="options" [title]="title" style="height:100%"></div>'
 })
 
-export class PieComponent extends BaseChart {
-
+export class PiesComponent extends BaseChart {
     public options: any;
 
     public title: string;
+
     constructor() {
         super();
-        this.title = "世界和平";
+        this.title = '任务类型';
         this.options = {
-            tooltip: {
+            tooltip : {
                 trigger: 'item',
                 formatter: "{a} <br/>{b} : {c} ({d}%)"
             },
             legend: {
-                data: ['皮祁','喻戴费'],
+                orient: 'vertical',
+                left: 'left',
+                data: ['调度','自主','抢单','导入'],
                 show:false
             },
-            series: [
+            series : [
                 {
-                    name: '姓名',
+                    name: '访问来源',
                     type: 'pie',
-                    radius: '55%',
+                    radius : '55%',
                     center: ['50%', '50%'],
-                    data: [
-                        { name: "皮祁", value: 25334 },
-                        { name: "喻戴费", value: 49441 }
+                    data:[
+                        {value:335, name:'调度'},
+                        {value:310, name:'自主'},
+                        {value:234, name:'抢单'},
+                        {value:135, name:'导入'},
                     ],
                     itemStyle: {
                         emphasis: {

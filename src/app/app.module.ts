@@ -13,6 +13,8 @@ import { EchartComponent } from './baseComponents/echart.component';
 import { RadarComponent } from './components/radar.component';
 import { GraphComponent } from './components/graph.component';
 import { BarComponent } from './components/bar.component';
+import { BarNegativeComponent } from './components/bar-negative.component';
+import { PiesComponent } from './components/pies.component';
 
 
 
@@ -25,7 +27,9 @@ import { BarComponent } from './components/bar.component';
     EchartComponent,
     RadarComponent,
     GraphComponent,
-    BarComponent
+    BarComponent,
+    BarNegativeComponent,
+    PiesComponent
   ],
   imports: [
     BrowserModule,
