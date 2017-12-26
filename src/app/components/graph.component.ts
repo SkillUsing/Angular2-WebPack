@@ -1,37 +1,46 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { BaseChart } from '../baseComponents/baseChart.component';
+import { GraphService } from "../services/graph.service"
 
 @Component({
     selector: '[graph]',
-    template: `<div echart [options]="options" [title]="title" style="height:100%"></div>`
+    template: `<div echart [options]="options" [title]="title" style="height:100%"></div>`,
+    providers: [GraphService]
 })
-export class GraphComponent extends BaseChart {
+export class GraphComponent extends BaseChart implements AfterViewInit {
+    ngAfterViewInit(): void {
+        this.serivce.getAll().then((data) => {
+            console.log(data);
+        }).catch(e => {
+            console.log(e.status);
+        });
+    }
 
     public options: any;
 
     public title: string;
 
     private categories: Array<{ name: string }> = [{
-        name:"测试1"
-    },{
-        name:"测试2"
-    },{
-        name:"测试3"
-    },{
-        name:"测试4"
-    },{
-        name:"测试5"
-    },{
-        name:"测试6"
+        name: "测试1"
+    }, {
+        name: "测试2"
+    }, {
+        name: "测试3"
+    }, {
+        name: "测试4"
+    }, {
+        name: "测试5"
+    }, {
+        name: "测试6"
     }];
 
     private data: Array<any> = [];
 
     private links: Array<any> = [];
 
-    
 
-    constructor() {
+
+    constructor(private serivce: GraphService) {
         super();
         this.nodeInit();
         this.linkInit();
@@ -89,7 +98,7 @@ export class GraphComponent extends BaseChart {
                     }
                 },
                 name: name,
-                value:value,
+                value: value,
                 symbolSize: symbolSize
             });
         }

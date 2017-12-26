@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 
 import { EchartsNg2Module } from 'echarts-ng2';
@@ -15,6 +16,7 @@ import { GraphComponent } from './components/graph.component';
 import { BarComponent } from './components/bar.component';
 import { BarNegativeComponent } from './components/bar-negative.component';
 import { PiesComponent } from './components/pies.component';
+
 
 
 
@@ -34,6 +36,7 @@ import { PiesComponent } from './components/pies.component';
   imports: [
     BrowserModule,
     EchartsNg2Module,
+    HttpModule
   ],
   providers: [],
   entryComponents: [
