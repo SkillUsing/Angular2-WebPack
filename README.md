@@ -1,5 +1,8 @@
 ## 数据展示
 
+#### Demo
+ 
+ [Demo](http://htmlpreview.github.io/?https://github.com/SkillUsing/Angular2-WebPack/blob/master/dist/index.html)
 
 #### 使用方法
 
