@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
 
   //10秒一次循环切换,并且获取数据
   startInterval() {
+    clearInterval(this.interval);
     this.interval = setInterval(() => {
       if (this.i >= this.charts.length) {
         this.i = 0;
