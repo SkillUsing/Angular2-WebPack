@@ -1,5 +1,20 @@
 ## 数据展示
 
+#### 引言
+
+因为项目需要,设计了一款大数据展示的页面Demo,该项目为半成品,去除了项目不允许展示的部分.
+
+Demo中Css调用错误还是半成品很久没有理会的原因,CSS 有点差异,各位自行弥补.
+
+很久没用Angular 也是写的略微简陋,应该封装更多的结构,由于时间上的原因加上懒得把正式项目拆分出一个可以展示共享的项目,所以这个项目就到这里.
+
+下面是成品图
+
+#### 图
+
+![成品展示](src/main.bmp)
+
+
 #### Demo
  
  [Demo](http://htmlpreview.github.io/?https://github.com/SkillUsing/Angular2-WebPack/blob/master/dist/index.html)
